@@ -6,6 +6,8 @@ from django.contrib import admin
 
 
 class Question(models.Model):
+    """Model for Question with publish date."""
+
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
@@ -23,6 +25,8 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
+    """Model for Choice that has relevant with Question"""
+
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
