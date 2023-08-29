@@ -13,9 +13,13 @@ to be added.
 
 ## Project Documents
 
-All project documents are in the [Project Wiki](../../wiki/Home).
+All project documents are in the [Project Wiki](https://github.com/ThanadolU/ku-polls/wiki).
 
-- [Vision Statement](../../wiki/Vision%20Statement)
-- [Requirements](../../wiki/Requirements)
+- [Vision Statement](https://github.com/ThanadolU/ku-polls/wiki/Vision-Statement)
+- [Requirements](https://github.com/ThanadolU/ku-polls/wiki/Requirements)
+- [Development Plan](https://github.com/ThanadolU/ku-polls/wiki/Development-Plan)
 
 [django-tutorial]: https://docs.djangoproject.com/en/4.1/intro/tutorial01/
+
+## Iterations
+- [Iteration 1 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-1-Plan)
