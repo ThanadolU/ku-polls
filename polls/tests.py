@@ -68,6 +68,24 @@ class QuestionModelTests(TestCase):
         past_question = Question(pub_date=time)
         self.assertIs(past_question.is_published(), True)
 
+    def test_can_vote_for_question_in_future(self):
+        time = timezone.localtime() + datetime.timedelta(days=20)
+        future_question = Question(pub_date=time)
+        self.assertIs(future_question.can_vote(), False)
+
+    def test_can_vote_for_question_in_current(self):
+        time = timezone.localtime()
+        current_question = Question(pub_date=time, end_date=time)
+        self.assertIs(current_question.can_vote(), True)
+
+    def test_can_vote_for_question_in_past(self):
+        time = timezone.localtime() - datetime.timedelta(days=-10)
+        past_question = Question(pub_date=time, end_date=timezone.localtime())
+        self.assertIs(past_question.can_vote(), False)
+
+    def test_can_vote_with_no_end_date(self):
+        question = Question(pub_date=timezone.localtime())
+        self.assertIs(question.can_vote(), True)
 
 class QuestionIndexViewTests(TestCase):
 
