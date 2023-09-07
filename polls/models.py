@@ -20,6 +20,14 @@ class Question(models.Model):
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
+    
+    def is_published(self):
+        return timezone.now() > self.pub_date
+
+    def can_vote(self):
+        if self.end_date is not None:
+            return self.pub_date < timezone.now() < self.end_date
+        return True
 
     def __str__(self):
         return self.question_text
