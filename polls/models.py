@@ -9,7 +9,8 @@ class Question(models.Model):
     """Model for Question with publish date."""
 
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', auto_now_add=False)
+    end_date = models.DateTimeField(null=True, blank=True)
 
     @admin.display(
         boolean=True,
