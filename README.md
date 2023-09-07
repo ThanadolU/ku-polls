@@ -23,3 +23,4 @@ All project documents are in the [Project Wiki](https://github.com/ThanadolU/ku-
 
 ## Iterations
 - [Iteration 1 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-1-Plan)
+- [Iteration 2 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-2-Plan)
