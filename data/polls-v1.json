@@ -27,12 +27,21 @@
   }
 },
 {
+  "model": "polls.question",
+  "pk": 4,
+  "fields": {
+    "question_text": "Which one is the movie that you like the most?",
+    "pub_date": "2023-09-07T07:19:15Z",
+    "end_date": null
+  }
+},
+{
   "model": "polls.choice",
   "pk": 1,
   "fields": {
     "question": 1,
     "choice_text": "Stephen Curry",
-    "votes": 7
+    "votes": 8
   }
 },
 {
@@ -140,6 +149,42 @@
   "fields": {
     "question": 3,
     "choice_text": "Watermelon",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 15,
+  "fields": {
+    "question": 4,
+    "choice_text": "Avengers: Endgame",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 16,
+  "fields": {
+    "question": 4,
+    "choice_text": "Titanic",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 17,
+  "fields": {
+    "question": 4,
+    "choice_text": "Avatar: The Way of Water",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 18,
+  "fields": {
+    "question": 4,
+    "choice_text": "Guardians of the Galaxy Vol. 3",
     "votes": 0
   }
 }

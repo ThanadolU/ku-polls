@@ -9,7 +9,7 @@ class Question(models.Model):
     """Model for Question with publish date."""
 
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published', auto_now_add=False)
+    pub_date = models.DateTimeField('date published', auto_now_add=True)
     end_date = models.DateTimeField(null=True, blank=True)
 
     @admin.display(
@@ -21,17 +21,18 @@ class Question(models.Model):
         now = timezone.localtime()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
     
+    def __str__(self):
+        return self.question_text
+    
     def is_published(self):
-        return timezone.localtime() > self.pub_date
+        now = timezone.localtime()
+        return now >= self.pub_date
 
     def can_vote(self):
         now = timezone.localtime()
-        if self.end_date is not None:
-            return self.pub_date <= now < self.end_date
-        return now >= self.pub_date
-
-    def __str__(self):
-        return self.question_text
+        if self.end_date is None:
+            return now >= self.pub_date
+        return self.pub_date <= now <= self.end_date
 
 
 class Choice(models.Model):
