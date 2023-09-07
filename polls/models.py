@@ -25,9 +25,10 @@ class Question(models.Model):
         return timezone.localtime() > self.pub_date
 
     def can_vote(self):
+        now = timezone.localtime()
         if self.end_date is not None:
-            return self.pub_date < timezone.localtime() < self.end_date
-        return True
+            return self.pub_date <= now < self.end_date
+        return now >= self.pub_date
 
     def __str__(self):
         return self.question_text
