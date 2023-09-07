@@ -14,7 +14,16 @@
   "fields": {
     "question_text": "What kind of Thai foods do you like?",
     "pub_date": "2023-08-29T07:59:12Z",
-    "end_date": null
+    "end_date": "2023-09-07T18:00:00Z"
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 3,
+  "fields": {
+    "question_text": "Which one of these fruits do you like?",
+    "pub_date": "2023-09-08T03:20:39Z",
+    "end_date": "2023-09-09T03:20:46Z"
   }
 },
 {
@@ -23,7 +32,7 @@
   "fields": {
     "question": 1,
     "choice_text": "Stephen Curry",
-    "votes": 6
+    "votes": 7
   }
 },
 {
@@ -32,7 +41,7 @@
   "fields": {
     "question": 1,
     "choice_text": "Lebron James",
-    "votes": 2
+    "votes": 4
   }
 },
 {
@@ -41,7 +50,7 @@
   "fields": {
     "question": 1,
     "choice_text": "Kawhi Leonard",
-    "votes": 0
+    "votes": 3
   }
 },
 {
@@ -50,7 +59,7 @@
   "fields": {
     "question": 1,
     "choice_text": "Nikola Jokic",
-    "votes": 0
+    "votes": 1
   }
 },
 {
@@ -59,7 +68,7 @@
   "fields": {
     "question": 2,
     "choice_text": "Tom Yum Kung",
-    "votes": 0
+    "votes": 1
   }
 },
 {
@@ -86,6 +95,51 @@
   "fields": {
     "question": 2,
     "choice_text": "Papaya Salad (Somtum)",
+    "votes": 1
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 10,
+  "fields": {
+    "question": 3,
+    "choice_text": "Durian",
+    "votes": 5
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 11,
+  "fields": {
+    "question": 3,
+    "choice_text": "Orange",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 12,
+  "fields": {
+    "question": 3,
+    "choice_text": "Grape",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 13,
+  "fields": {
+    "question": 3,
+    "choice_text": "Melon",
+    "votes": 0
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 14,
+  "fields": {
+    "question": 3,
+    "choice_text": "Watermelon",
     "votes": 0
   }
 }
