@@ -18,17 +18,21 @@ class Question(models.Model):
         description='Published recently?',
     )
     def was_published_recently(self):
+        """Return boolean whether it was published recently."""
         now = timezone.localtime()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
-    
+
     def __str__(self):
+        """Return readable string of each question."""
         return self.question_text
-    
+
     def is_published(self):
+        """Return boolean when the question was published."""
         now = timezone.localtime()
         return now >= self.pub_date
 
     def can_vote(self):
+        """Return boolean when voting is allowed."""
         now = timezone.localtime()
         if self.end_date is None:
             return now >= self.pub_date
@@ -43,4 +47,5 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
+        """Return readable string of each choice."""
         return self.choice_text
