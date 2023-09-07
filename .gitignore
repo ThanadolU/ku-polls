@@ -1,5 +1,5 @@
 # Environment vars file
-*.env
+.env
 
 # Virtual environments
 env/
