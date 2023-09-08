@@ -1,3 +1,4 @@
+"""This module contains the Question and Choice models."""
 import datetime
 
 from django.db import models
