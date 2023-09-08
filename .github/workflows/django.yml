@@ -8,6 +8,7 @@ on:
 
 env:
   SECRET_KEY: something-secret-key
+  ALLOWED_HOSTS: *.ku.th, localhost, 127.0.0.1, ::1, testserver
   TIME_ZONE: Asia/Bangkok
 
 jobs:
