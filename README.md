@@ -1,3 +1,4 @@
+[![Unittest](https://github.com/ThanadolU/ku-polls/actions/workflows/django.yml/badge.svg)](https://github.com/ThanadolU/ku-polls/actions/workflows/django.yml)
 ## KU Polls: Online Survey Questions 
 
 An application to conduct online polls and surveys based
@@ -23,3 +24,4 @@ All project documents are in the [Project Wiki](https://github.com/ThanadolU/ku-
 
 ## Iterations
 - [Iteration 1 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-1-Plan)
+- [Iteration 2 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-2-Plan)

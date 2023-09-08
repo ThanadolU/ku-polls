@@ -1,3 +1,4 @@
+"""This module contains the Question and Choice models."""
 import datetime
 
 from django.db import models
@@ -10,6 +11,7 @@ class Question(models.Model):
 
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
+    end_date = models.DateTimeField(null=True, blank=True)
 
     @admin.display(
         boolean=True,
@@ -17,11 +19,25 @@ class Question(models.Model):
         description='Published recently?',
     )
     def was_published_recently(self):
-        now = timezone.now()
+        """Return boolean whether it was published recently."""
+        now = timezone.localtime()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
     def __str__(self):
+        """Return readable string of each question."""
         return self.question_text
+
+    def is_published(self):
+        """Return boolean when the question was published."""
+        now = timezone.localtime()
+        return now >= self.pub_date
+
+    def can_vote(self):
+        """Return boolean when voting is allowed."""
+        now = timezone.localtime()
+        if self.end_date is None:
+            return now >= self.pub_date
+        return self.pub_date <= now <= self.end_date
 
 
 class Choice(models.Model):
@@ -32,4 +48,5 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
+        """Return readable string of each choice."""
         return self.choice_text
