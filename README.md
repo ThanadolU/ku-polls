@@ -1,3 +1,4 @@
+[![Unittest](https://github.com/ThanadolU/ku-polls/actions/workflows/django.yml/badge.svg)](https://github.com/ThanadolU/ku-polls/actions/workflows/django.yml)
 ## KU Polls: Online Survey Questions 
 
 An application to conduct online polls and surveys based
