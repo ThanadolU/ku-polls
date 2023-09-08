@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  SECRET_KEY: something-secret-key
+  TIME_ZONE: Asia/Bangkok
+
 jobs:
   build:
 
