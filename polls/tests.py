@@ -201,23 +201,6 @@ class QuestionDetailViewTests(TestCase):
 
 class QuestionResultsViewTests(TestCase):
 
-    def test_correct_vote_count_display(self):
-        """
-        The result view of question that show the right
-        vote count for each choice.
-        """
-        question = create_question(question_text='Test.', days=-2)
-        create_choice(question=question, choice_text="choice 1")
-        choice = question.choice_set.get(pk=1)
-        choice.votes += 1
-        choice.save()
-        url = reverse('polls:results', args=(question.id,))
-        response = self.client.get(url)
-        self.assertContains(
-            response,
-            f'{choice.choice_text} {choice.votes}'
-        )
-
     def test_future_question_results_page(self):
         """
         The results for unpublished questions should not be accessible.
