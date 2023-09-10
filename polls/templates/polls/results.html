@@ -1,16 +1,33 @@
 {% load static %}
 
 <html>
-    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    </head>
 
     <body>
         <h1>{{ question.question_text }}</h1>
-        <ul>
-            {% for choice in question.choice_set.all %}
-                <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-            {% endfor %}
-        </ul>
-
-        <a href="{% url 'polls:index' %}"><button>Back to List of Polls</button></a>
+        <table class="choice">
+            <thead>
+                <tr>
+                    <th>Choice</th>
+                    <th>Vote</th>
+                </tr>
+            </thead>        
+            <tbody>
+                {% for choice in question.choice_set.all %}
+                    <tr>
+                        <td>
+                            {{ choice.choice_text }}
+                        </td>
+                        <td>
+                            {{ choice.votes }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="{% url 'polls:index' %}" style="display: flex; justify-content: center; text-decoration: none;"><button>Back to List of Polls</button></a>
     </body>
 </html>
