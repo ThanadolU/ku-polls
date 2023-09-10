@@ -2,28 +2,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="{% static 'polls/style.css' %}">
-        <style>
-            h1 {
-                text-align: center;
-            }
-
-            .question {
-                border: 1px solid black;
-                border-collapse: collapse;
-                margin-left: auto; 
-                margin-right: auto;
-            }
-            
-            .question th, .question td {
-                border: 2px solid black;
-                padding: 8px;
-            }
-            
-            .question tr:nth-child(even) {
-                background-color: #dddddd;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
     </head>
 
     <body>
@@ -62,7 +41,6 @@
                         </tr>
                     {% endfor %}
                 </tbody>
-
             </table>
         {% else %}
             <p>No polls are available.</p>

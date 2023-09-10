@@ -1,7 +1,7 @@
 {% load static %}
 
 <html>
-    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 
     <body>
         <form action="{% url 'polls:vote' question.id %}" method="post">

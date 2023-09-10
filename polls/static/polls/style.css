@@ -5,3 +5,42 @@ li a {
 body {
     background-color: #B5E2FF;
 }
+
+h1 {
+    text-align: center;
+}
+
+.question {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.question th, .question td {
+    border: 2px solid black;
+    padding: 8px;
+}
+
+.question tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.choice {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.choice th {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.choice td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+}
