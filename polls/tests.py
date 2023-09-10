@@ -215,7 +215,7 @@ class QuestionResultsViewTests(TestCase):
         response = self.client.get(url)
         self.assertContains(
             response,
-            f'{choice.choice_text} -- {choice.votes}'
+            f'{choice.choice_text} {choice.votes}'
         )
 
     def test_future_question_results_page(self):
