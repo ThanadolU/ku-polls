@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import Question, Choice
 
@@ -85,6 +86,7 @@ class ResultsView(generic.DetailView):
         return render(request, 'polls/results.html', {'question': question})
 
 
+@login_required
 def vote(request, question_id):
     """Add vote to selected choice of current question."""
 
