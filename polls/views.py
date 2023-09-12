@@ -58,7 +58,15 @@ class DetailView(generic.DetailView):
             messages.error(request, 'You cannot vote unpublished \
                            or ended question')
             return HttpResponseRedirect(reverse('polls:index'))
-        return render(request, 'polls/detail.html', {'question': question})
+        try:
+            vote = Vote.objects.get(choice__question=question)
+            selected_choice = vote.choice.choice_text
+        except Vote.DoesNotExist:
+            selected_choice = ''
+        return render(request, 'polls/detail.html', {
+            'question': question, 
+            'selected_choice': selected_choice
+            })
 
 
 class ResultsView(generic.DetailView):
@@ -101,8 +109,7 @@ def vote(request, question_id):
         return render(request, 'polls/detail.html', {
             'question': question,
         })
-    # selected_choice.votes += 1
-    # selected_choice.save()
+    
     user = request.user
     try:
         # find a vote for this user and this question
