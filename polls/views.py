@@ -45,6 +45,7 @@ class DetailView(generic.DetailView):
         Return index page if is_published or can_vote are true.
         If not return detail page.
         """
+        user = request.user
         try:
             question = Question.objects.get(pk=pk)
         except Question.DoesNotExist:
@@ -58,6 +59,8 @@ class DetailView(generic.DetailView):
             messages.error(request, 'You cannot vote unpublished \
                            or ended question')
             return HttpResponseRedirect(reverse('polls:index'))
+        if not user.is_authenticated:
+            return redirect('login')
         try:
             vote = Vote.objects.get(choice__question=question)
             selected_choice = vote.choice.choice_text
