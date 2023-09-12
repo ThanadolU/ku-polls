@@ -6,6 +6,8 @@ from django.views import generic
 from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .models import Vote
+# from django.contrib.auth.forms import UserCreationForm
 
 from .models import Question, Choice
 
@@ -99,11 +101,20 @@ def vote(request, question_id):
         return render(request, 'polls/detail.html', {
             'question': question,
         })
-    else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results',
-                                            args=(question.id,)))
+    # selected_choice.votes += 1
+    # selected_choice.save()
+    user = request.user
+    try:
+        # find a vote for this user and this question
+        vote = Vote.objects.get(user=user, choice__question=question)
+        # update his/her vote
+        vote.choice = selected_choice
+    except Vote.DoesNotExist:
+        # no matching vote - create a new Vote
+        vote = Vote(user=user, choice=selected_choice)
+    vote.save()
+    # Always return an HttpResponseRedirect after successfully dealing
+    # with POST data. This prevents data from being posted twice if a
+    # user hits the Back button.
+    return HttpResponseRedirect(reverse('polls:results',
+                                        args=(question.id,)))
