@@ -3,9 +3,15 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+        <title>Polls</title>
     </head>
 
     <body>
+        {% if user.is_authenticated %}
+            <p>Welcome back, {{user.username.title}}</p>
+        {% else %}
+            Please <a href="{% url 'login' %}">Login</a> to vote
+        {% endif %}
         {% if messages %}
             {% for message in messages %}
                 <div role="alert" style="color: red;">
