@@ -1,11 +1,9 @@
-{% load static %}
+{% extends "base.html" %}
+{% block title %}
+    KU Polls Results
+{% endblock title %}
 
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-    </head>
-
-    <body>
+{% block body %}
         <h1>{{ question.question_text }}</h1>
         <table class="choice">
             <thead>
@@ -29,5 +27,4 @@
         </table>
         <br>
         <a href="{% url 'polls:index' %}" style="display: flex; justify-content: center; text-decoration: none;"><button>Back to List of Polls</button></a>
-    </body>
-</html>
+{% endblock body %}

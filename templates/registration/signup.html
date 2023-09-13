@@ -3,7 +3,6 @@
         <h2>Register</h2>
         <form method="POST">
             {% csrf_token %}
-<<<<<<< HEAD
             <table style="padding: 2ex;">
                 {{ form.as_table }}     {# this line shows the sign-up form #}
                 <tr>
@@ -12,16 +11,6 @@
                     </td>
                 </tr>
             </table>
-=======
-            <table style="padding: : 2ex;">
-                {{ form.as_table }}
-            </table>
-            <tr>
-                <td colspan="2">
-                    <button type="submit">Register</button>
-                </td>
-            </tr>
->>>>>>> d2b6541bba2643065444ef59212dcdbc460195b9
         </form>
     </body>
 </html>

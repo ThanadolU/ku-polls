@@ -1,55 +1,43 @@
-{% load static %}
+{% extends "base.html" %}
+{% block title %}
+    KU Polls
+{% endblock title %}
 
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-        <title>Polls</title>
-    </head>
+{% block body %}
+    {% if user.is_authenticated %}
+        <p>Welcome back, {{user.username.title}}</p>
+    {% else %}
+        Please Login to vote
+    {% endif %}
+    {% if messages %}
+        {% for message in messages %}
+            <div role="alert" style="color: red;">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
-    <body>
-        {% if user.is_authenticated %}
-            <p>Welcome back, {{user.username.title}}</p>
-        {% else %}
-            Please <a href="{% url 'login' %}">Login</a> to vote
-        {% endif %}
-        {% if messages %}
-            {% for message in messages %}
-                <div role="alert" style="color: red;">
-                    {{ message }}
+    <h1>List of KU Polls Questions</h1>
+    {% if latest_question_list %}
+        <div class="polls">
+            {% for question in latest_question_list %}
+                <div class="question">
+                    <h3>{{ forloop.counter }}. {{question.question_text}}</h3>
+                    <a href="{% url 'polls:detail' question.id %}" 
+                        style="text-decoration: none; 
+                               color: black;">
+                        <button>Vote</button>
+                    </a>
+                    <a href="{% url 'polls:results' question.id %}" 
+                        style="text-decoration: none; 
+                               color: black;">
+                        <button>Results</button>
+                    </a>
                 </div>
+                <br>
             {% endfor %}
-        {% endif %}
-
-        <h1>List of KU Polls Questions</h1>
-        {% if latest_question_list %}
-            <table class="question">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Question</th>
-                        <th>Results Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for question in latest_question_list %}
-                        <tr>
-                            <td>{{ forloop.counter }}.</td>
-                            <td>
-                                <a href="{% url 'polls:detail' question.id %}">
-                                    {{question.question_text}}
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{% url 'polls:results' question.id %}">
-                                    <button>Results</button>
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>No polls are available.</p>
-        {% endif %}
-    </body>
-</html>
+        </div>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+{% endblock body%}
