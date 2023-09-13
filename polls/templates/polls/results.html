@@ -4,27 +4,35 @@
 {% endblock title %}
 
 {% block body %}
-        <h1>{{ question.question_text }}</h1>
-        <table class="choice">
-            <thead>
-                <tr>
-                    <th>Choice</th>
-                    <th>Vote</th>
-                </tr>
-            </thead>        
-            <tbody>
-                {% for choice in question.choice_set.all %}
-                    <tr>
-                        <td>
-                            {{ choice.choice_text }}
-                        </td>
-                        <td>
-                            {{ choice.votes }}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <h1>{{ question.question_text }}</h1>
+    {% if messages %}
+    {% for message in messages %}
+        <div role="alert" style="color: green; font-size: medium; text-align: center;">
+            {{ message }}
+        </div>
         <br>
-        <a href="{% url 'polls:index' %}" style="display: flex; justify-content: center; text-decoration: none;"><button>Back to List of Polls</button></a>
+    {% endfor %}
+    {% endif %}
+    <table class="choice">
+        <thead>
+            <tr>
+                <th>Choice</th>
+                <th>Vote</th>
+            </tr>
+        </thead>        
+        <tbody>
+            {% for choice in question.choice_set.all %}
+                <tr>
+                    <td>
+                        {{ choice.choice_text }}
+                    </td>
+                    <td>
+                        {{ choice.votes }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{% url 'polls:index' %}" style="display: flex; justify-content: center; text-decoration: none;"><button>Back to List of Polls</button></a>
 {% endblock body %}

@@ -121,6 +121,7 @@ def vote(request, question_id):
         # no matching vote - create a new Vote
         vote = Vote(user=user, choice=selected_choice)
     vote.save()
+    messages.info(request, f'You\'re already selected {selected_choice}')
     # Always return an HttpResponseRedirect after successfully dealing
     # with POST data. This prevents data from being posted twice if a
     # user hits the Back button.
