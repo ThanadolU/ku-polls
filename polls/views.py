@@ -102,7 +102,7 @@ class ResultsView(generic.DetailView):
 @login_required
 def vote(request, question_id):
     """Add vote to selected choice of current question."""
-
+    user = request.user
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
@@ -112,8 +112,6 @@ def vote(request, question_id):
         return render(request, 'polls/detail.html', {
             'question': question,
         })
-    
-    user = request.user
     try:
         # find a vote for this user and this question
         vote = Vote.objects.get(user=user, choice__question=question)
