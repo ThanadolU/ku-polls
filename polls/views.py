@@ -67,7 +67,7 @@ class DetailView(generic.DetailView):
         except Vote.DoesNotExist:
             selected_choice = ''
         return render(request, 'polls/detail.html', {
-                'question': question, 
+                'question': question,
                 'selected_choice': selected_choice
             })
 
