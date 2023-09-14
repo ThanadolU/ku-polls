@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', cast=str, default='missing-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
@@ -115,7 +115,7 @@ LOGOUT_REDIRECT_URL = 'login'         # after logout, direct to where?
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = config('TIME_ZONE', cast=str)
+TIME_ZONE = config('TIME_ZONE', cast=str, default='UTC')
 
 USE_I18N = True
 

@@ -28,22 +28,6 @@ h1 {
     color: #1AA7EC;
 }
 
-/* .question {
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-.question th, .question td {
-    border: 2px solid black;
-    padding: 8px;
-}
-
-.question tr:nth-child(even) {
-    background-color: #dddddd;
-} */
-
 .question {
     /* border: 1px solid black; */
     border-radius: 10px;
@@ -85,4 +69,3 @@ h1 {
     margin-right: auto;
     padding: 1px 15px 10px 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
