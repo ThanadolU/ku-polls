@@ -66,4 +66,5 @@ class Vote(models.Model):
 
     @property
     def question(self):
+        """Question of that choice"""
         return self.choice.question
