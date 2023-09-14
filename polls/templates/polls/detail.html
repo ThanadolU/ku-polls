@@ -1,27 +1,30 @@
-{% load static %}
+{% extends "base.html" %}
+{% block title %}
+    KU Polls Detail
+{% endblock title %}
 
-<html>
-    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-
-    <body>
-        <form action="{% url 'polls:vote' question.id %}" method="post">
-            {% csrf_token %}
-            <fieldset>
-                <legend><h1>{{question}}</h1></legend>
-                {% if messages %}
-                    {% for message in messages %}
-                        <p style="color: red;"><strong>{{ message }}</strong></p>
-                    {% endfor %}
-                {% endif %}
-                {% for choice in question.choice_set.all %}
-                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-                    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
-                    <br>
+{% block body %}
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        <div class="detail">
+            <legend><h1>{{question}}</h1></legend>
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color: red;"><strong>{{ message }}</strong></p>
                 {% endfor %}
-            </fieldset>
-            <input type="submit", value="Vote">
-        </form>
-        <a href="{% url 'polls:index' %}"><button>Back to List of Polls</button></a>
-        <a href="{% url 'polls:results' question.id %}"><button>Results</button></a>
-    </body>
-</html>
+            {% endif %}
+            {% for choice in question.choice_set.all %}
+                {% if choice.choice_text == selected_choice %}
+                    <input type="radio" name="choice" id="choice{{ selected_choice.id }}" value="{{ choice.id }}" checked>
+                {% else %}
+                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                {% endif %}
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+                <br>
+            {% endfor %}
+            <input type="submit", value="Vote" style="margin-top: 10px;">
+            <a href="{% url 'polls:index' %}"><button>Back to List of Polls</button></a>
+            <a href="{% url 'polls:results' question.id %}"><button>Results</button></a>
+        </div>
+    </form>
+{% endblock body %}
