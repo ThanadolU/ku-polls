@@ -14,7 +14,7 @@
   "fields": {
     "question_text": "What kind of Thai foods do you like?",
     "pub_date": "2023-08-29T07:59:12Z",
-    "end_date": "2023-09-07T18:00:00Z"
+    "end_date": "2023-09-22T01:37:31Z"
   }
 },
 {
@@ -23,7 +23,7 @@
   "fields": {
     "question_text": "Which one of these fruits do you like?",
     "pub_date": "2023-09-08T03:20:39Z",
-    "end_date": "2023-09-09T03:20:46Z"
+    "end_date": "2023-09-22T01:37:16Z"
   }
 },
 {
@@ -184,6 +184,30 @@
   "pk": 2,
   "fields": {
     "choice": 1,
+    "user": 1
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 3,
+  "fields": {
+    "choice": 18,
+    "user": 5
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 4,
+  "fields": {
+    "choice": 13,
+    "user": 1
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 5,
+  "fields": {
+    "choice": 8,
     "user": 1
   }
 }

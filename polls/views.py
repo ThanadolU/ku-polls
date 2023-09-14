@@ -85,6 +85,9 @@ class ResultsView(generic.DetailView):
         return Question.objects.filter(pub_date__lte=timezone.localtime())
 
     def get(self, request, pk):
+        """Return different pages depend on is_published.
+        Redirect index page if question does not exist or
+        is_published is false. Return result page"""
         try:
             question = Question.objects.get(pk=pk)
         except Question.DoesNotExist:
@@ -99,7 +102,7 @@ class ResultsView(generic.DetailView):
         return render(request, 'polls/results.html', {'question': question})
 
 
-@login_required
+@login_required(login_url="/accounts/login/")
 def vote(request, question_id):
     """Add vote to selected choice of current question."""
     user = request.user
@@ -121,7 +124,7 @@ def vote(request, question_id):
         # no matching vote - create a new Vote
         vote = Vote(user=user, choice=selected_choice)
     vote.save()
-    messages.info(request, f'You\'re already selected {selected_choice}')
+    messages.info(request, f'You\'re selected {selected_choice}')
     # Always return an HttpResponseRedirect after successfully dealing
     # with POST data. This prevents data from being posted twice if a
     # user hits the Back button.
