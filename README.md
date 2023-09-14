@@ -10,7 +10,33 @@ https://cpske.github.io/ISP) course at Kasetsart University.
 
 ## Install and Run
 
-to be added.
+Clone this repository using this command in your terminal to your desired directory.
+```
+git clone https://github.com/ThanadolU/ku-polls.git
+```
+The next step is to install packages required by this repository in you [virtual environment](https://docs.python.org/3/library/venv.html).
+```
+# Run while sourcing the venv.
+pip install -r requirements.txt
+```
+The final step is to run the development server by,
+```
+python manage.py runserver
+```
+You can now visit `http://localhost:8000` or `http://127.0.0.1:8000/`
+
+## Demo Admin
+| No. |Username|Password|
+|:---:|:-------|:-------|
+|1.| demo1 | 123456 |
+
+
+## Demo User
+
+| No. |Username|Password|
+|:---:|:-------|:-------|
+|1.|test_polls| 123456!@#$%^ |
+|2.| test_polls2 | test!@#$ |
 
 ## Project Documents
 
@@ -25,3 +51,4 @@ All project documents are in the [Project Wiki](https://github.com/ThanadolU/ku-
 ## Iterations
 - [Iteration 1 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-1-Plan)
 - [Iteration 2 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-2-Plan)
+- [Iteration 3 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-3-Plan)

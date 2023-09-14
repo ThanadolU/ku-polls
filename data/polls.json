@@ -189,14 +189,6 @@
 },
 {
   "model": "polls.vote",
-  "pk": 3,
-  "fields": {
-    "choice": 18,
-    "user": 5
-  }
-},
-{
-  "model": "polls.vote",
   "pk": 4,
   "fields": {
     "choice": 13,
@@ -209,6 +201,30 @@
   "fields": {
     "choice": 8,
     "user": 1
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 6,
+  "fields": {
+    "choice": 16,
+    "user": 6
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 7,
+  "fields": {
+    "choice": 9,
+    "user": 6
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 8,
+  "fields": {
+    "choice": 2,
+    "user": 6
   }
 }
 ]
