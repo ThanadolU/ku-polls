@@ -7,7 +7,7 @@
     {% endblock head %}
 
     <body>
-        <div class="nav">
+        <div class="navbar">
             <a href="{% url 'polls:index' %}">Home</a>
             {% if not user.is_authenticated %}
                 <a href="{% url 'login' %}">Login</a>
