@@ -1,0 +1,56 @@
+[
+{
+  "model": "polls.question",
+  "pk": 1,
+  "fields": {
+    "question_text": "Who is your favorite NBA Player?",
+    "pub_date": "2023-08-27T08:24:12Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 2,
+  "fields": {
+    "question_text": "What kind of Thai foods do you like?",
+    "pub_date": "2023-08-29T07:59:12Z",
+    "end_date": "2023-09-30T05:35:49Z"
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 3,
+  "fields": {
+    "question_text": "Which one of these fruits do you like?",
+    "pub_date": "2023-09-15T01:44:32Z",
+    "end_date": "2023-09-30T05:35:32Z"
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 4,
+  "fields": {
+    "question_text": "Which one is the movie that you like the most?",
+    "pub_date": "2023-09-07T07:19:15Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 5,
+  "fields": {
+    "question_text": "Which one is your favorite programming language?",
+    "pub_date": "2023-09-28T05:38:42Z",
+    "end_date": "2023-09-30T05:37:23Z"
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 6,
+  "fields": {
+    "question_text": "Which one is your favorite Frontend Framework?",
+    "pub_date": "2023-09-21T05:47:24Z",
+    "end_date": "2023-09-30T05:47:02Z"
+  }
+}
+]
