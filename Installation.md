@@ -4,7 +4,7 @@ This file containing instructions for how to install and configure application.
 ## Clone code from GitHub
 Clone this repository using this command in your terminal to your desired directory
 ```
-git clone https://github.com/ThanadolU/ku-polls.git .
+git clone https://github.com/ThanadolU/ku-polls.git
 ```
 
 ## Create a virtual environment and install dependencies
