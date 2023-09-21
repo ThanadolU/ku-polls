@@ -15,10 +15,18 @@ Clone this repository using this command in your terminal to your desired direct
 git clone https://github.com/ThanadolU/ku-polls.git
 ```
 The next step is to install packages required by this repository in your [virtual environment](https://docs.python.org/3/library/venv.html).
-```
-# Run while sourcing the venv.
-pip install -r requirements.txt
-```
+- Create your virtual environment
+    ```
+    python -m venv venv
+    ```
+- Activate your virtual environment
+    ```
+    venv\Scripts\activate
+    ```
+- Install dependencies from requirements.txt
+    ```
+    pip install -r requirements.txt
+    ```
 The final step is to run the development server by,
 ```
 python manage.py runserver
