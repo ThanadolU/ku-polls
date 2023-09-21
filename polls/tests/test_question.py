@@ -74,7 +74,9 @@ class QuestionModelTests(TestCase):
         and end_date are in the same date but different seconds.
         """
         time = timezone.localtime()
-        current_question = Question(pub_date=time, end_date=time+datetime.timedelta(seconds=1))
+        current_question = Question(pub_date=time,
+                                    end_date=time+datetime
+                                    .timedelta(seconds=1))
         self.assertIs(current_question.can_vote(), True)
 
     def test_can_vote_for_question_in_past(self):
