@@ -25,7 +25,7 @@ class IndexView(generic.ListView):
         """
         # return Question.objects.order_by('-pub_date')[:5]
         return Question.objects.filter(pub_date__lte=timezone.localtime())\
-            .order_by('-pub_date')[:5]
+            .order_by('-pub_date')
 
 
 class DetailView(generic.DetailView):

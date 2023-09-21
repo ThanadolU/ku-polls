@@ -14,16 +14,26 @@ Clone this repository using this command in your terminal to your desired direct
 ```
 git clone https://github.com/ThanadolU/ku-polls.git
 ```
-The next step is to install packages required by this repository in you [virtual environment](https://docs.python.org/3/library/venv.html).
-```
-# Run while sourcing the venv.
-pip install -r requirements.txt
-```
+The next step is to install packages required by this repository in your [virtual environment](https://docs.python.org/3/library/venv.html).
+- Create your virtual environment
+    ```
+    python -m venv venv
+    ```
+- Activate your virtual environment
+    ```
+    venv\Scripts\activate
+    ```
+- Install dependencies from requirements.txt
+    ```
+    pip install -r requirements.txt
+    ```
 The final step is to run the development server by,
 ```
 python manage.py runserver
 ```
 You can now visit `http://localhost:8000` or `http://127.0.0.1:8000/`
+
+More details about installation in [Installation.md](Installation)
 
 ## Demo Admin
 | No. |Username|Password|
@@ -51,4 +61,5 @@ All project documents are in the [Project Wiki](https://github.com/ThanadolU/ku-
 ## Iterations
 - [Iteration 1 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-1-Plan)
 - [Iteration 2 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-2-Plan)
-- [Iteration 3 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-3-Plan)
+- [Iteration 3 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-3-Plan) and [Domain Model](https://github.com/ThanadolU/ku-polls/wiki/Domain-Model) 
+- [Iteration 4 Plan](https://github.com/ThanadolU/ku-polls/wiki/Iteration-4-Plan)
