@@ -86,7 +86,7 @@ Run all tests for this application
     ```
     
 ## Install data from the data fixtures
-
+Install polls data which contain questions and choices
 * Load question data from JSON files
     ```
     python manage.py loaddata data/polls-question.json
