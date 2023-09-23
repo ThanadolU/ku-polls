@@ -33,7 +33,7 @@ python manage.py runserver
 ```
 You can now visit `http://localhost:8000` or `http://127.0.0.1:8000/`
 
-More details about installation in [Installation.md](Installation)
+More details about installation in [Installation.md](Installation.md)
 
 ## Demo Admin
 | No. |Username|Password|
