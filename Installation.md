@@ -62,6 +62,15 @@ ALLOWED_HOSTS=localhost, 127.0.0.1
 # set TIME_ZONE to your timezone
 TIME_ZONE=Asia/Bangkok
 ```
+Create a .env file for externalized variables.
+- For Windows
+    ```
+    copy sample.env .env
+    ```
+- For MacOS:
+    ```
+    cp sample.env .env 
+    ```
 
 ## Run migrations
 
