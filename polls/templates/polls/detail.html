@@ -23,8 +23,8 @@
                 <br>
             {% endfor %}
             <input type="submit", value="Vote" style="margin-top: 10px;">
-            <a href="{% url 'polls:index' %}"><button>Back to List of Polls</button></a>
-            <a href="{% url 'polls:results' question.id %}"><button>Results</button></a>
         </div>
     </form>
+    <a href="{% url 'polls:index' %}"><button>Back to List of Polls</button></a>
+    <a href="{% url 'polls:results' question.id %}"><button>Results</button></a>
 {% endblock body %}
