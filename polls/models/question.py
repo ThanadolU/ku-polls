@@ -1,10 +1,9 @@
-"""This module contains the Question and Choice models."""
+"""This module contains Question model."""
 import datetime
 
 from django.db import models
 from django.utils import timezone
 from django.contrib import admin
-from django.contrib.auth.models import User
 
 
 class Question(models.Model):
@@ -39,32 +38,3 @@ class Question(models.Model):
         if self.end_date is None:
             return now >= self.pub_date
         return self.pub_date <= now <= self.end_date
-
-
-class Choice(models.Model):
-    """Model for Choice that has relevant with Question"""
-
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    # votes = models.IntegerField(default=0)
-
-    @property
-    def votes(self):
-        """Count the votes for this choice"""
-        # count = Vote.objects.filter(choice=self).count()
-        return self.vote_set.count()
-
-    def __str__(self):
-        """Return readable string of each choice."""
-        return self.choice_text
-
-
-class Vote(models.Model):
-    """Record a Vote of a Choice by a User."""
-    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    @property
-    def question(self):
-        """Question of that choice"""
-        return self.choice.question
